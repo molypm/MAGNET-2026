@@ -1,0 +1,82 @@
+.evt-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 20px 0 0 0;
+}
+.evt-tab {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 22px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 15px;
+  color: #444;
+  background: #e9e9ea;
+  border-radius: 8px 8px 0 0;
+  transition: background .18s ease, color .18s ease;
+}
+.evt-tab.active {
+  background: #B3384B;
+  color: #fff;
+}
+.evt-tab-panels {
+  padding: 24px;
+  margin: 0 0 20px 0;
+  background: #fff;
+}
+.evt-tab-panel { display: none; }
+.evt-tab-panel.active { display: block; }
+
+.evt-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 22, .6);
+  z-index: 9999;
+  padding: 32px 16px;
+  overflow-y: auto;
+}
+.evt-modal-overlay.open {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.evt-modal-box {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 10px;
+  margin: 24px auto;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+.evt-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.evt-modal-trigger { cursor: pointer; }
+
+.evt-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 900px) { .evt-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .evt-card-grid { grid-template-columns: 1fr; } }
+
+@keyframes mag-pulse { 0%{ box-shadow:0 0 0 0 rgba(223,161,61,.55); } 70%{ box-shadow:0 0 0 14px rgba(223,161,61,0); } 100%{ box-shadow:0 0 0 0 rgba(223,161,61,0); } }
+.mag-cta-btn:hover{ opacity:.88; }
+.mag-outline-btn:hover{ background:#B3384B !important; color:#fff !important; }
+.mag-cta-pulse{ animation:mag-pulse 2.4s infinite; }
+.mag-nav-link{ text-decoration:none; }
+.mag-nav-link:hover, .mag-nav-link:focus, .mag-nav-link:active{ border-bottom-color:currentColor !important; }
